@@ -44,7 +44,7 @@ namespace JsonSchemaValidationCompressor.Net {
 
                 this.Compress(nContext, Object);
 
-                String Name = Text.Replace('/', '_').Replace(".json", String.Empty);
+                String Name = Text.Replace("../", String.Empty).Replace("./", String.Empty).Replace('/', '_').Replace(".json", String.Empty);
 
                 if (Context._Definitions.ContainsKey(Name)) {
                     Context._Definitions.Remove(Name);

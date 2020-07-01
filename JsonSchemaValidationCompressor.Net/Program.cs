@@ -7,8 +7,8 @@ namespace JsonSchemaValidationCompressor.Net {
 
 #if DEBUG
             args = new String[] {
-                @"F:\Software\JsonSchemaValidationCompressor.Net\examples\render_controllers.json",
-                @"F:\Software\JsonSchemaValidationCompressor.Net\out\render_controllers.json"
+                @"F:\Projects\Blockception\VSCode-Bedrock-Development-Extension\source schemas\minecraft-general\schemas\resource\entity\entity.json",
+                @"F:\Projects\Blockception\VSCode-Bedrock-Development-Extension\minecraft-general\schemas\resource\entity\entity.json"
             };
 #endif
 

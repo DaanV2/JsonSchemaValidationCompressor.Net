@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using DaanV2;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 
@@ -34,7 +33,7 @@ namespace JsonSchemaValidationCompressor.Net {
             JObject Object = JObject.Load(JsonReader);
             Reader.Close();
 
-            if (!Object.Contains("definitions")) {
+            if (!Object.ContainsKey("definitions")) {
                 Object.Add("definitions", new JObject());
             }
 
@@ -42,6 +41,8 @@ namespace JsonSchemaValidationCompressor.Net {
             this.Compress(Context, Object);
 
             Console.WriteLine("Writing:\t" + Context._DestinationFilepath);
+            FileInfo Destination = new FileInfo(Context._DestinationFilepath);
+            Destination.Directory.Create();
             StreamWriter Writer = new StreamWriter(Context._DestinationFilepath);
             JsonTextWriter JsonWriter = new JsonTextWriter(Writer);
 
