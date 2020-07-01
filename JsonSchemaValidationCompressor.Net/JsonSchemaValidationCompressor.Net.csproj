@@ -33,6 +33,15 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ConfigHandling.Net, Version=1.0.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Config-Handling.Net.1.0.9\lib\net48\ConfigHandling.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="DaanV2.Essentials.Net, Version=1.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\DaanV2.Essentials.Net.1.1.2\lib\net48\DaanV2.Essentials.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -43,11 +52,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classes\Json Compressor Context\Json Compressor Context.cs" />
+    <Compile Include="Classes\Json Compressor\Json Compressor - ResolveReference.cs" />
+    <Compile Include="Classes\Json Compressor\Json Compressor - Initialize.cs" />
+    <Compile Include="Classes\Json Compressor\Json Compressor - Compress.cs" />
+    <Compile Include="Classes\Json Compressor\Json Compressor - Variables.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
