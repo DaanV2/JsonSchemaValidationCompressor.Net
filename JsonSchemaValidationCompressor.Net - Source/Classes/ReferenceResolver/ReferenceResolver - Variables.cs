@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text.Json;
 using Newtonsoft.Json.Linq;
 
 namespace DaanV2.Json {
@@ -11,9 +10,14 @@ namespace DaanV2.Json {
         /// <summary>
         /// 
         /// </summary>
-        internal JObject _Definitions;
+        internal Dictionary<String, JToken>  _Definitions;
 
         /// <summary></summary>
         internal Uri _Basepath;
+
+        /// <summary>
+        /// 
+        /// </summary>
+        internal List<JToken> References;
     }
 }

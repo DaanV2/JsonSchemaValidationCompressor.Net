@@ -20,10 +20,12 @@ namespace DaanV2.Json {
 
             //Check if definitions object exists, else add it
             if (Doc.ContainsKey(this._DefinitionsName)) {
-                Resolver._Definitions = (JObject)Doc[this._DefinitionsName];
+                foreach (KeyValuePair<String, JToken> Item in (JObject)Doc[this._DefinitionsName]) {
+                    Resolver._Definitions[Item.Key] = Item.Value;
+                }
             }
             else {
-                Resolver._Definitions = new JObject();
+                Doc.Add(this._DefinitionsName, new JObject());
             }
 
             //Traverse all the elements looking for $ref, and resolve them
@@ -31,7 +33,16 @@ namespace DaanV2.Json {
 
             //If larger then 0 make sure its present in the document
             if (Resolver._Definitions.Count > 0) {
-                Doc[this._DefinitionsName] = Resolver._Definitions;
+                var Definitions = (JObject)Doc[this._DefinitionsName];
+
+                foreach (KeyValuePair<String, JToken> Item in Resolver._Definitions) {
+                    if (Item.Value == null) {
+                        continue;
+                    }
+
+                    JToken Current = Item.Value.DeepClone();
+                    Definitions[Item.Key] = Current;
+                }
             }
 
             return Resolver;
@@ -90,6 +101,8 @@ namespace DaanV2.Json {
         private void ResolveRef(JObject Element, ReferenceResolver Resolver) {
             String Reference;
 
+            Resolver.References.Add(Element);
+
             if (Element is JObject OElement) {
                 Reference = OElement["$ref"].Value<String>();
             }
@@ -115,7 +128,7 @@ namespace DaanV2.Json {
             String Name = Resolver.GetDefinitionsName(uri);
 
             if (!Resolver.HasDefinition(Name)) {
-                JObject ReferenceData = File.Load(uri.AbsolutePath);
+                JObject ReferenceData = File.Load(uri.AbsolutePath.Replace("%20", " "));
 
                 ReferenceResolver Data = this.InternalResolve(ReferenceData, uri.AbsolutePath, Resolver);
                 Resolver.Inherit(Name, ReferenceData, Data);

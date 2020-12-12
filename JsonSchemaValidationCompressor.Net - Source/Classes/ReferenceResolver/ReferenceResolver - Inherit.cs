@@ -10,8 +10,18 @@ namespace DaanV2.Json {
         /// <param name="name"></param>
         /// <param name="referenceData"></param>
         internal void Inherit(String name, JObject referenceData, ReferenceResolver Child) {
+            //Transfer references
+            this.References.AddRange(Child.References);
+
+            //Transfers reference converters data
             foreach (KeyValuePair<String, String> Item in Child._ReferenceConverter) {
                 this._ReferenceConverter[Item.Key] = Item.Value;
+            }
+
+            foreach (KeyValuePair<String, JToken> Item in Child._Definitions) {
+                if (Item.Value != null) {
+                    this._Definitions[Item.Key] = Item.Value;
+                }
             }
 
             //Copy over definitions
@@ -20,7 +30,7 @@ namespace DaanV2.Json {
 
                 if (definitions is JObject ODefinitions) {
                     foreach (KeyValuePair<String, JToken> Item in ODefinitions) {
-                        this._Definitions[Item.Key] = Item.Value;
+                        this._Definitions[Item.Key] = Item.Value.DeepClone();
                     }
                 }
 

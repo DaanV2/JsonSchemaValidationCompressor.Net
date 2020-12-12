@@ -9,9 +9,6 @@
     <Import_RootNamespace>DaanV2.Json</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="$(MSBuildThisFileDirectory)Schema\" />
-  </ItemGroup>
-  <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ReferenceResolver\ReferenceResolver - Inherit.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ReferenceResolver\ReferenceResolver - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\ReferenceResolver\ReferenceResolver - Functions.cs" />
@@ -22,6 +19,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaCompressor\SchemaCompressor - Compress.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Simplify.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Resolve.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Properties.cs" />
@@ -31,6 +29,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Function.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Properties.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Variables.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Static Classes\DictionaryExtension\DictionaryExtension.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Static Classes\File\File.cs" />
   </ItemGroup>
 </Project>
