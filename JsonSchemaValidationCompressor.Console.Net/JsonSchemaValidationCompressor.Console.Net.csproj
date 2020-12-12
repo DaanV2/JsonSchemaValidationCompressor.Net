@@ -5,10 +5,10 @@
     <TargetFramework>net5.0</TargetFramework>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\JsonSchemaValidationCompressor.API.Net\JsonSchemaValidationCompressor.API.Net.csproj" />
-  </ItemGroup>
-
   <Import Project="..\JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems" Label="Shared" />
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+  </ItemGroup>
 
 </Project>
