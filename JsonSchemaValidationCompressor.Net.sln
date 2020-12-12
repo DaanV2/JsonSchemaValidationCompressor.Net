@@ -3,18 +3,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSchemaValidationCompressor.Net", "JsonSchemaValidationCompressor.Net\JsonSchemaValidationCompressor.Net.csproj", "{C75AD78F-E139-41EA-8B81-B483D1CDC457}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSchemaValidationCompressor.API.Net", "JsonSchemaValidationCompressor.API.Net\JsonSchemaValidationCompressor.API.Net.csproj", "{190CE852-64ED-4A34-8116-0920E339E193}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSchemaValidationCompressor.Console.Net", "JsonSchemaValidationCompressor.Console.Net\JsonSchemaValidationCompressor.Console.Net.csproj", "{DD724D51-01E4-4E25-B7C6-DB260DD957F0}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "JsonSchemaValidationCompressor.Net - Source", "JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.shproj", "{CB985E02-8FC6-417F-A279-ADC209148B3B}"
 EndProject
 Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems*{190ce852-64ed-4a34-8116-0920e339e193}*SharedItemsImports = 5
+		JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems*{cb985e02-8fc6-417f-a279-adc209148b3b}*SharedItemsImports = 13
+		JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems*{dd724d51-01e4-4e25-b7c6-db260dd957f0}*SharedItemsImports = 5
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C75AD78F-E139-41EA-8B81-B483D1CDC457}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C75AD78F-E139-41EA-8B81-B483D1CDC457}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C75AD78F-E139-41EA-8B81-B483D1CDC457}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C75AD78F-E139-41EA-8B81-B483D1CDC457}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

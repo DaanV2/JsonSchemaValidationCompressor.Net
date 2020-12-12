@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>DaanV2.Json</RootNamespace>
+  </PropertyGroup>
+
+  <Import Project="..\JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems" Label="Shared" />
+
+</Project>

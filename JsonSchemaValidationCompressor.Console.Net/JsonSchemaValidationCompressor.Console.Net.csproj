@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\JsonSchemaValidationCompressor.API.Net\JsonSchemaValidationCompressor.API.Net.csproj" />
+  </ItemGroup>
+
+  <Import Project="..\JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems" Label="Shared" />
+
+</Project>
