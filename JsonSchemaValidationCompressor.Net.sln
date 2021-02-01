@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30114.105
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSchemaValidationCompressor.API.Net", "JsonSchemaValidationCompressor.API.Net\JsonSchemaValidationCompressor.API.Net.csproj", "{190CE852-64ED-4A34-8116-0920E339E193}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonSchemaValidationCompressor.API.Net", "JsonSchemaValidationCompressor.API.Net\JsonSchemaValidationCompressor.API.Net.csproj", "{190CE852-64ED-4A34-8116-0920E339E193}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonSchemaValidationCompressor.Console.Net", "JsonSchemaValidationCompressor.Console.Net\JsonSchemaValidationCompressor.Console.Net.csproj", "{DD724D51-01E4-4E25-B7C6-DB260DD957F0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonSchemaValidationCompressor.Console.Net", "JsonSchemaValidationCompressor.Console.Net\JsonSchemaValidationCompressor.Console.Net.csproj", "{DD724D51-01E4-4E25-B7C6-DB260DD957F0}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "JsonSchemaValidationCompressor.Net - Source", "JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.shproj", "{CB985E02-8FC6-417F-A279-ADC209148B3B}"
 EndProject
@@ -17,17 +17,37 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
 		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|x64.ActiveCfg = Debug|x64
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|x64.Build.0 = Debug|x64
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|x86.ActiveCfg = Debug|x86
+		{190CE852-64ED-4A34-8116-0920E339E193}.Debug|x86.Build.0 = Debug|x86
 		{190CE852-64ED-4A34-8116-0920E339E193}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{190CE852-64ED-4A34-8116-0920E339E193}.Release|Any CPU.Build.0 = Release|Any CPU
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|x64.ActiveCfg = Release|x64
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|x64.Build.0 = Release|x64
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|x86.ActiveCfg = Release|x86
+		{190CE852-64ED-4A34-8116-0920E339E193}.Release|x86.Build.0 = Release|x86
 		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|x64.ActiveCfg = Debug|x64
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|x64.Build.0 = Debug|x64
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|x86.ActiveCfg = Debug|x86
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Debug|x86.Build.0 = Debug|x86
 		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|x64.ActiveCfg = Release|x64
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|x64.Build.0 = Release|x64
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|x86.ActiveCfg = Release|x86
+		{DD724D51-01E4-4E25-B7C6-DB260DD957F0}.Release|x86.Build.0 = Release|x86
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

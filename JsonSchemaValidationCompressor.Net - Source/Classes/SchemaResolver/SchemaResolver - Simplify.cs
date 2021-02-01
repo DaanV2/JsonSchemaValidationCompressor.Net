@@ -7,41 +7,52 @@ namespace DaanV2.Json {
         /// <summary>
         /// 
         /// </summary>
-        private void Simplify(JObject Doc, ReferenceResolver Resolver) {
+        /// <param name="Schema"></param>
+        public void DefinitionSimplfier(JObject Schema) {
+            Console.WriteLine("Simplyfing definitions");
+            var Definitions = (JObject)Schema["definitions"];
 
+            var Names = new List<String>(Definitions.Count);
+            foreach (KeyValuePair<String, JToken> Child in Definitions) {
+                Names.Add(Child.Key);
+            }
+
+            UInt32 Count = 0;
+
+            var Data = new List<ReplaceData>();
+
+            var NewDefinitions = new JObject();
+
+            foreach (String Name in Names) {
+                var Item = (JObject)Definitions[Name];
+
+                String NewName = ReferenceResolver.CreateName(Count);
+                ++Count;
+
+                //Replace the definition with a shorter one
+                NewDefinitions[NewName] = Item;
+                Data.Add(new ReplaceData("#/definitions/" + Name, "#/definitions/" + NewName));
+            }
+
+            Schema["definitions"] = NewDefinitions;
+
+            this.ReplaceDefinition(Schema, Data);
         }
 
-        internal static void SimplifyCount(JObject Doc, ReferenceResolver Resolver) {
-            var Count = new Dictionary<String, Int32>(Resolver._Definitions.Count);
+        private struct ReplaceData {
 
-            foreach (KeyValuePair<String, JToken> Item in Resolver._Definitions) {
-                Count[Item.Key] = 0;
+            /// <summary>
+            /// 
+            /// </summary>
+            /// <param name="Old"></param>
+            /// <param name="New"></param>
+            public ReplaceData(String Old, String New) {
+                this.Old = Old;
+                this.New = New;
             }
 
-            foreach (JToken Item in Resolver.References) {
-                String Ref = Item["$ref"].Value<String>();
-
-                if (Ref.StartsWith("#/definitions/")) {
-                    Ref = Ref[14..];
-
-                    if (Count.TryGetValue(Ref, out Int32 Value)) {
-                        Count[Ref] = Value + 1;
-                    }
-                    else {
-                        Count[Ref] = 1;
-                    }
-                }
-            }
-
-            foreach (KeyValuePair<String, Int32> Item in Count) {
-                if (Item.Value == 0) {
-                    Resolver._Definitions.Remove(Item.Key);
-                    Resolver._ReferenceConverter.RemoveValue(Item.Key);
-                }
-                else if (Item.Value == 1) {
-                    JToken Definitions = Resolver._Definitions[Item.Key];
-                }
-            }
+            public String New;
+            public String Old;
         }
     }
 }

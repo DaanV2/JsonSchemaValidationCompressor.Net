@@ -11,16 +11,15 @@ namespace DaanV2.Json {
             String Total = Reference.ToString();
 
             //if exists return it
-            if (this._ReferenceConverter.TryGetValue(Total, out String Name)) {
-                return Name;
+            if (this._ReferenceConverter.TryGetValue(Total, out String Value)) {
+                return Value;
             }
 
             //if not then create it
-            UInt32 Number = (UInt32 )Total.GetHashCode();
+            UInt32 Number = (UInt32)this._ReferenceConverter.Count;
 
-            Name = CreateName(Number);
+            String Name = CreateName(Number);
             this._ReferenceConverter[Total] = Name;
-
             return Name;
         }
 
@@ -33,7 +32,7 @@ namespace DaanV2.Json {
             String Temp = Number.ToString();
             Char[] Chars = new Char[Temp.Length];
 
-            for(Int32 I = 0; I < Chars.Length; I++) {
+            for (Int32 I = 0; I < Chars.Length; I++) {
                 Chars[I] = (Char)((Temp[I] - '0') + 'A');
             }
 

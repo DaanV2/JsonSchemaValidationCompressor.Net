@@ -15,6 +15,13 @@ namespace DaanV2.Json {
             _ = this.InternalResolve(Doc, Filepath);
         }
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="Doc"></param>
+        /// <param name="Filepath"></param>
+        /// <param name="Parent"></param>
+        /// <returns></returns>
         internal ReferenceResolver InternalResolve(JObject Doc, String Filepath, ReferenceResolver Parent = null) {
             var Resolver = new ReferenceResolver(Directory.GetParent(Filepath).FullName, Parent);
 
@@ -44,6 +51,8 @@ namespace DaanV2.Json {
                     Definitions[Item.Key] = Current;
                 }
             }
+
+            //this.DefinitionSimplfier(Doc);
 
             return Resolver;
         }
@@ -129,6 +138,7 @@ namespace DaanV2.Json {
 
             if (!Resolver.HasDefinition(Name)) {
                 JObject ReferenceData = File.Load(uri.AbsolutePath.Replace("%20", " "));
+                this.AppendDefinition(ReferenceData, Name);
 
                 ReferenceResolver Data = this.InternalResolve(ReferenceData, uri.AbsolutePath, Resolver);
                 Resolver.Inherit(Name, ReferenceData, Data);

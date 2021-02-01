@@ -19,6 +19,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaCompressor\SchemaCompressor - Compress.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Replace.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Update.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Simplify.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Resolve.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Initialize.cs" />

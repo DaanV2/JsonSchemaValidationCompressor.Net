@@ -6,9 +6,12 @@ namespace JsonSchemaValidationCompressor.Console.Net {
         private static void Main(String[] args) {
             System.Console.WriteLine("Processing compression specifications");
 
-#if DEBUG
-            args = new String[] { @"F:\Projects\Blockception\VSCode-Bedrock-Development-Extension\minecraft-bedrock-schemas\compress specification.json" };
-#endif 
+            if (args.Length == 0) {
+                System.Console.WriteLine("Compression specification: ");
+                String File = System.Console.ReadLine();
+
+                args = new String[] { File };
+            }
 
             foreach (String arg in args) {
                 if (System.IO.File.Exists(arg)) {

@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System.Diagnostics;
+using System.IO;
 using System.Text;
 using DaanV2.Json.Specification;
 using Newtonsoft.Json;
@@ -21,10 +22,7 @@ namespace DaanV2.Json {
         /// </summary>
         /// <param name="Specification"></param>
         public void Compress(FileSpecification Specification) {
-#if DEBUG
-            System.Diagnostics.Debug.WriteLine("Compressing json: " + Specification.Source);
             System.Console.WriteLine("Compressing json: " + Specification.Source);
-#endif
 
             if (!System.IO.File.Exists(Specification.Source)) {
                 throw new FileNotFoundException("Cannot find source file", Specification.Source);
@@ -42,7 +40,7 @@ namespace DaanV2.Json {
             };
 
 #if DEBUG
-            System.Diagnostics.Debug.WriteLine("Writing json: " + Specification.Destination);
+            Debug.WriteLine("Writing json: " + Specification.Destination);
 #endif
 
             Doc.WriteTo(JsonWriter);
