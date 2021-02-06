@@ -27,4 +27,8 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
   </ItemGroup>
 
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="set Framework=netcore50&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    mkdir &quot;$(SolutionDir)Release\$(PlatformName)\$(TargetName)\&quot;&#xD;&#xA;    copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Release\$(PlatformName)\$(TargetName)\&quot;&#xD;&#xA;)" />
+  </Target>
+
 </Project>
