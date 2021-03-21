@@ -17,6 +17,9 @@ namespace JsonSchemaValidationCompressor.Console.Net {
                 if (System.IO.File.Exists(arg)) {
                     SchemaCompressor.Compress(arg);
                 }
+                else {
+                    System.Console.WriteLine("Couldn't find: " + arg);
+                }
             }
 
             System.Console.WriteLine("==== Done ====");
