@@ -4,7 +4,7 @@ using DaanV2.Json;
 namespace JsonSchemaValidationCompressor.Console.Net {
     public class Program {
         private static void Main(String[] args) {
-            System.Console.WriteLine("Processing compression specifications");
+            System.Console.WriteLine("==== Processing compression specifications ====");
 
             if (args.Length == 0) {
                 System.Console.WriteLine("Compression specification: ");
@@ -18,6 +18,8 @@ namespace JsonSchemaValidationCompressor.Console.Net {
                     SchemaCompressor.Compress(arg);
                 }
             }
+
+            System.Console.WriteLine("==== Done ====");
         }
     }
 }
