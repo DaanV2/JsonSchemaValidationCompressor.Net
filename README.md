@@ -7,7 +7,7 @@ A program that can compress json files as well as solving relative file call. Th
 
 ```json
 {
-	"$schema": "",
+	"$schema": "https://raw.githubusercontent.com/DaanV2/JsonSchemaValidationCompressor.Net/master/Schema/Compression%20Schema.json",
 	"Files": [
     {
       "Source": "./skinpacks/skins.json",
