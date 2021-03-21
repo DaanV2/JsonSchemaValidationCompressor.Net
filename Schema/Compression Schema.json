@@ -1,0 +1,32 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"$id": "json.compression.specification",
+	"title": "Compression specification",
+	"description": "The specification on which files to compress",
+	"type": "object",
+	"properties": {
+		"Files": {
+			"title": "Files",
+			"description": "The files to compress",
+			"type": "array",
+			"items": {
+				"title": "File",
+				"description": "The file to compress",
+				"type": "object",
+				"additionalProperties": false,
+				"properties": {
+					"Source": {
+						"title": "Source",
+						"description": "The source file, can be relative",
+						"type": "string"
+					},
+					"Destination": {
+						"title": "Destination",
+						"description": "The destination file, can be relative",
+						"type": "string"
+					}
+				}
+			}
+		}
+	}
+}
