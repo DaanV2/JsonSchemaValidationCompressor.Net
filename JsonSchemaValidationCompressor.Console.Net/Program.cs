@@ -15,10 +15,18 @@ namespace JsonSchemaValidationCompressor.Console.Net {
 
             foreach (String arg in args) {
                 if (System.IO.File.Exists(arg)) {
-                    SchemaCompressor.Compress(arg);
+                    try {
+                        SchemaCompressor.Compress(arg);
+                    }
+                    catch(Exception ex) {
+                        System.Console.WriteLine(ex.Message);
+                        System.Console.WriteLine(ex.StackTrace);
+                        Environment.ExitCode = 1;
+                    }                    
                 }
                 else {
                     System.Console.WriteLine("Couldn't find: " + arg);
+                    Environment.ExitCode = 1;
                 }
             }
 
