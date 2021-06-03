@@ -20,7 +20,7 @@ namespace DaanV2.Json {
                     String Message = ex.Message;
 
                     if (!Message.StartsWith("##[error]")) {
-                        Message = Message + "##[error] ";
+                        Message = "##[error] " + Message;
                     }
 
                     Console.WriteLine(Message);

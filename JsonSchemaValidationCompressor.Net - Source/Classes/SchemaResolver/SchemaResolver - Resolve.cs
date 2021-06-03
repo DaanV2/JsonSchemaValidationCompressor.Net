@@ -137,7 +137,13 @@ namespace DaanV2.Json {
             String Name = Resolver.GetDefinitionsName(uri);
 
             if (!Resolver.HasDefinition(Name)) {
-                JObject ReferenceData = File.Load(uri.AbsolutePath.Replace("%20", " "));
+                String Filepath = uri.AbsolutePath.Replace("%20", " ");
+
+                if (!System.IO.File.Exists(Filepath)) {
+                    throw new FileNotFoundException($"{Resolver._Basepath} Tried to load: {Reference}");
+                }
+
+                JObject ReferenceData = File.Load(Filepath);
                 this.AppendDefinition(ReferenceData, Name);
 
                 ReferenceResolver Data = this.InternalResolve(ReferenceData, uri.AbsolutePath, Resolver);
