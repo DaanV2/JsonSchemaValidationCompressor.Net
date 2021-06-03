@@ -25,7 +25,7 @@ namespace JsonSchemaValidationCompressor.Console.Net {
                     }                    
                 }
                 else {
-                    System.Console.WriteLine("Couldn't find: " + arg);
+                    System.Console.WriteLine("##[error] couldn't find: " + arg);
                     Environment.ExitCode = 1;
                 }
             }

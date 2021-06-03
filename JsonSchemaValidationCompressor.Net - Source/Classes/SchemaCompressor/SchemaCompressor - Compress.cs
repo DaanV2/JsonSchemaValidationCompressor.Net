@@ -1,4 +1,4 @@
-﻿using System.Diagnostics;
+﻿using System;
 using System.IO;
 using System.Text;
 using DaanV2.Json.Specification;
@@ -13,7 +13,18 @@ namespace DaanV2.Json {
         /// <param name="Specification"></param>
         public void Compress(CompressingSpecification Specification) {
             foreach (FileSpecification File in Specification.Files) {
-                this.Compress(File);
+                try {
+                    this.Compress(File);
+                }
+                catch (Exception ex) {
+                    String Message = ex.Message;
+
+                    if (!Message.StartsWith("##[error]")) {
+                        Message = Message + "##[error] ";
+                    }
+
+                    Console.WriteLine(Message);
+                }
             }
         }
 
@@ -22,10 +33,10 @@ namespace DaanV2.Json {
         /// </summary>
         /// <param name="Specification"></param>
         public void Compress(FileSpecification Specification) {
-            System.Console.WriteLine("Compressing json: " + Specification.Source);
+            Console.WriteLine("Compressing json: " + Specification.Source);
 
             if (!System.IO.File.Exists(Specification.Source)) {
-                throw new FileNotFoundException("Cannot find source file", Specification.Source);
+                throw new FileNotFoundException("cannot find source file", Specification.Source);
             }
 
             JObject Doc = File.Load(Specification.Source);
