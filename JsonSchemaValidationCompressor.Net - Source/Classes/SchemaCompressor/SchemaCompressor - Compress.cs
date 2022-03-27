@@ -45,17 +45,19 @@ namespace DaanV2.Json {
             this.Resolver.Resolve(Doc, Specification.Source);
 
             Directory.GetParent(Specification.Destination).Create();
-            var Writer = new StreamWriter(Specification.Destination, false, Encoding.UTF8);
+            var Writer = new StreamWriter(Specification.Destination, false, EncodingUTF8);
             var JsonWriter = new JsonTextWriter(Writer) {
                 Formatting = Formatting.None
             };
 
 #if DEBUG
-            Debug.WriteLine("Writing json: " + Specification.Destination);
+            Console.WriteLine("Writing json: " + Specification.Destination);
 #endif
 
             Doc.WriteTo(JsonWriter);
             Writer.Close();
         }
+
+        private static Encoding EncodingUTF8 = new UTF8Encoding(false);
     }
 }
