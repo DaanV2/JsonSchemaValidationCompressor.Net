@@ -24,7 +24,7 @@
   <Import Project="..\JsonSchemaValidationCompressor.Net - Source\JsonSchemaValidationCompressor.Net - Source.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
