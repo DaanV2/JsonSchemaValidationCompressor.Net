@@ -4,6 +4,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>net6.0</TargetFramework>
     <Platforms>AnyCPU;x64;x86</Platforms>
+    <PackageId>jsvc</PackageId>
+    <Authors>DaanV2</Authors>
+    <Product>jsvc</Product>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -26,9 +29,5 @@
   <ItemGroup>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
-
-  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="set Framework=netcore50&#xD;&#xA;&#xD;&#xA;if '$(ConfigurationName)' == 'Release' (&#xD;&#xA;    mkdir &quot;$(SolutionDir)Release\$(PlatformName)\$(TargetName)\&quot;&#xD;&#xA;    copy &quot;$(TargetDir)*&quot; &quot;$(SolutionDir)Release\$(PlatformName)\$(TargetName)\&quot;&#xD;&#xA;)" />
-  </Target>
 
 </Project>
