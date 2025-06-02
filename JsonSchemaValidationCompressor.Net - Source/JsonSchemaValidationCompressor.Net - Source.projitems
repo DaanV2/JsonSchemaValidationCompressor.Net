@@ -23,10 +23,8 @@
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Update.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Simplify.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Classes\SchemaResolver\SchemaResolver - Resolve.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Initialize.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Properties.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Function.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\Compressing Specification\Compressing Specification - Variables.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Initialize.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Function.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Specification\Classes\File Specification\File Specification - Properties.cs" />

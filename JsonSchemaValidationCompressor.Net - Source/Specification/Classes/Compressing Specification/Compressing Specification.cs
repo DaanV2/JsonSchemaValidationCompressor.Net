@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using Newtonsoft.Json;
+using System.Text.Json.Serialization;
 
 namespace DaanV2.Json.Specification {
     public sealed partial class CompressingSpecification {
@@ -8,7 +8,11 @@ namespace DaanV2.Json.Specification {
         public List<FileSpecification> Files { get; set; }
 
         /// <summary>Gets or sets the schema</summary>
-        [JsonProperty("$schema")]
+        [JsonPropertyName("$schema")]
         public String Schema { get; set; }
+
+        public CompressingSpecification() {
+            this.Files = new List<FileSpecification>();
+        }
     }
 }

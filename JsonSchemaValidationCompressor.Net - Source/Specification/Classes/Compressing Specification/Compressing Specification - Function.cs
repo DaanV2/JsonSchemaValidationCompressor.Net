@@ -1,7 +1,7 @@
 ﻿using System;
 
 namespace DaanV2.Json.Specification {
-    public sealed partial class CompressingSpecification {
+    public partial class CompressingSpecification {
         /// <summary>
         /// 
         /// </summary>
