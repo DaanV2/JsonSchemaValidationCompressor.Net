@@ -2,12 +2,6 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0 AS build
 WORKDIR /src
 
-# Copy csproj and restore as distinct layers
-COPY JsonSchemaValidationCompressor.Console.Net/*.csproj ./JsonSchemaValidationCompressor.Console.Net/
-COPY JsonSchemaValidationCompressor.API.Net/*.csproj ./JsonSchemaValidationCompressor.API.Net/
-COPY JsonSchemaValidationCompressor.Net\ -\ Source/*.shproj ./JsonSchemaValidationCompressor.Net - Source/
-COPY JsonSchemaValidationCompressor.Net\ -\ Source/*.projitems ./JsonSchemaValidationCompressor.Net - Source/
-
 # Copy the rest of the source code
 COPY . .
 
