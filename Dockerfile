@@ -11,10 +11,10 @@ RUN dotnet restore JsonSchemaValidationCompressor.Console.Net/JsonSchemaValidati
 # Publish the application to a self-contained directory
 RUN dotnet publish JsonSchemaValidationCompressor.Console.Net/JsonSchemaValidationCompressor.Console.Net.csproj -c Release -r linux-x64 --self-contained false -o /app/publish
 
-# Build runtime image
-FROM mcr.microsoft.com/dotnet/runtime:9.0
+# Build minimal runtime image
+FROM mcr.microsoft.com/dotnet/runtime-deps:9.0
 WORKDIR /app
-COPY --from=build /app/publish .
+COPY --from=build /app/publish/JsonSchemaValidationCompressor.Console.Net .
 
 # Set the entrypoint
-ENTRYPOINT ["dotnet", "JsonSchemaValidationCompressor.Console.Net.dll"]
+ENTRYPOINT ["/app/JsonSchemaValidationCompressor.Console.Net"]
