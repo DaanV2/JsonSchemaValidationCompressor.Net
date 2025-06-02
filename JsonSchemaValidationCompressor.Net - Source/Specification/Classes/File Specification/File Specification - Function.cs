@@ -2,7 +2,7 @@
 using System.IO;
 
 namespace DaanV2.Json.Specification {
-    public sealed partial class FileSpecification {
+    public partial class FileSpecification {
         /// <summary>
         /// 
         /// </summary>

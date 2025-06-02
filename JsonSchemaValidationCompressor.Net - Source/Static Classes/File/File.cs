@@ -32,7 +32,7 @@ namespace DaanV2.Json {
         /// <typeparam name="T"></typeparam>
         /// <param name="Filepath"></param>
         /// <returns></returns>
-        public static T Deserialize<T>(String Filepath) {
+        public static T Deserialize<T>(String Filepath) where T : new() {
         #if DEBUG
             System.Diagnostics.Debug.WriteLine("Deserializing json: " + Filepath);
             Console.WriteLine("Deserializing json: " + Filepath);
