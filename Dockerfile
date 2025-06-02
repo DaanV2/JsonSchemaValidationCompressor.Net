@@ -8,8 +8,8 @@ COPY . .
 # Restore dependencies
 RUN dotnet restore JsonSchemaValidationCompressor.Console.Net/JsonSchemaValidationCompressor.Console.Net.csproj
 
-# Publish the application to a self-contained directory
-RUN dotnet publish JsonSchemaValidationCompressor.Console.Net/JsonSchemaValidationCompressor.Console.Net.csproj -c Release -r linux-x64 --self-contained false -o /app/publish
+# Publish the application as a single, self-contained, trimmed file
+RUN dotnet publish JsonSchemaValidationCompressor.Console.Net/JsonSchemaValidationCompressor.Console.Net.csproj -c Release -r linux-x64 --self-contained true -p:PublishSingleFile=true -p:PublishTrimmed=true -p:PublishReadyToRun=true -o /app/publish
 
 # Build minimal runtime image
 FROM mcr.microsoft.com/dotnet/runtime-deps:9.0
